@@ -1,0 +1,40 @@
+#wrap {
+  border-radius: 20px;
+  width: 750px;
+  margin: 0 auto;
+  background: #ffffcc;
+}
+#header {
+  border-radius: 20px;
+  background: #ddd;
+  text-align: center;
+}
+#nav {
+  border-radius: 20px;
+  background: #c99;
+}
+#main {
+  border-radius: 20px;
+  background: #9c9;
+  float: left;
+  width: 500px;
+  height: 500px;
+}
+#sidebar {
+  border-radius: 20px;
+  background: #c9c;
+  float: right;
+  width: 250px;
+  height: 500px;
+}
+#footer {
+  border-radius: 20px;
+  background: #cc9;
+  clear: both;
+}
+
+#nav li {
+  float: none;
+  display: inline-block;
+  width: 90px;
+}

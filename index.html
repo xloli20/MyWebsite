@@ -1,0 +1,113 @@
+<?php 
+	session_start(); 
+
+	if (!isset($_SESSION['username'])) {
+		$_SESSION['msg'] = "You must log in first";
+		header('location: login.php');
+	}
+
+	if (isset($_GET['logout'])) {
+		session_destroy();
+		unset($_SESSION['username']);
+		header("location: login.php");
+	}
+
+?>
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Alaa Alzhrani</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<a href="index.php" class="logo"><strong>Alaa</strong> <span>CS Student</span></a>
+						<nav>
+							<ul class="links">
+								<li><a href="index.php">Home</a></li>
+							    <li><a href="cv.php">C.V.</a></li>
+							    <li><a href="video.php">Video </a></li>
+							    <li><a href="hobbies.php">Hobbies</a></li>
+							    <li><a href="coursework.php">Coursework</a></li>
+							    <li><a href="animation.php">Animation</a></li>
+						    </ul>
+						    <ul class="actions vertical">
+							    <li><a href="register.php" class="button special fit">sign up</a></li>
+						    </ul>
+						    <div class="content">
+
+		<!-- notification message -->
+		<?php if (isset($_SESSION['success'])) : ?>
+			<div class="error success" >
+				<h3>
+					<?php 
+						echo $_SESSION['success']; 
+						unset($_SESSION['success']);
+					?>
+				</h3>
+			</div>
+		<?php endif ?>
+
+		<!-- logged in user information -->
+		<?php  if (isset($_SESSION['username'])) : ?>
+			<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
+			<p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
+		<?php endif ?>
+	</div>
+		
+						</nav>
+					</header>
+					
+				<!-- Banner -->
+					<section id="banner" class="major">
+						<div class="inner">
+							<header class="major">
+								<h1>Hi, my name is ALaa!</h1>
+							</header>
+							<div class="content">
+								<p>A computer sciences student id:436008675 course: web <br />
+								 development year: 2018.</p>
+								<ul class="actions">
+									<li><a href="video.php" class="button next scrolly">Get Started</a></li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+							<section id="two">
+								<div class="inner">
+									<header class="major">
+										<h2>Introduction </h2>
+									</header>
+									<p>My full name is Alaa Atiah Mohammad Alzahrani. I am studying in Albaha University, Computer Sciences College. I like Algorithms and programming I can say that I am Android developer, frontend web developer  also I am good at dealing with computer hardware last week I build my first PC. This website is the project for Web Development Course. I write it with these languages: html, css, javaScript, php. </p>
+									<ul class="actions">
+										<li><a href="cv.php" class="button next">Get to know me more</a></li>
+									</ul>
+								</div>
+							</section>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="https://twitter.com/AAMZ1996" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="https://www.instagram.com/xloli20/" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="https://github.com/xloli20" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="https://www.linkedin.com/in/alaa-alzhrani-3aa236153/" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							</ul>
+							
+						</div>
+					</footer>
+			</div>
+	</body>
+</html>

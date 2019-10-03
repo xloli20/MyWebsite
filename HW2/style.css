@@ -1,0 +1,23 @@
+h1
+{
+font: italic bold 26px arial, sans-serif;
+color : black;
+background : #DCDCDC;
+border : 5px solid black;
+padding : 20px;
+width : 650px;
+border-radius: 15px;
+}
+
+h2
+{
+position:relative;
+top:-460px;
+left:720px;
+}
+img {
+	position:relative;
+	border : 5px solid black;
+	width : 340px;
+	height : 435px;
+}
